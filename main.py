@@ -1,7 +1,6 @@
 """
-    My Camera application
-
-    author: Shihab Al Ratul
+    Camera app
+    Author: Shihab Al Ratul
 """
 
 import sys
@@ -12,7 +11,7 @@ import cv2
 import datetime
 
 class Window(QWidget):
-    """ Main app window"""
+    """ App Window """
 
     def __init__(self):
         super().__init__()
@@ -126,11 +125,10 @@ class Window(QWidget):
             print("Starting to record")
             self.get_time()
             
-            self.out = cv2.VideoWriter(f"{self.dt}.avi", self.fourcc, 20.0, (self.img_width, self.img_height))
-    
+            self.out = cv2.VideoWriter(f'{self.dt}.avi', self.fourcc, 20.0, (self.img_width, self.img_height))
     def get_time(self):
         now = datetime.datetime.now()
-        self.dt = now.strftime("%m-%d-%y,%H-%M-%S")
+        self.dt = now.strftime("%m-%d-%y-%H-%M-%S")
         print(self.dt)
 
 # run
